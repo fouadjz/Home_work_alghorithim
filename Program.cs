@@ -3,51 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Home_work_miss_alaa
 {
-    class Search<T>
-    {
-       public static int Binary_Searche(int [] array, int  key)
-        {
-            int low = 0, high = array.Length - 1;
-            while (low <= high)
-            {
-                int mid = (high + low) / 2;
-                if (key==array[mid]) return (mid );
-                if (key>array[mid]) low = mid + 1;
-                else { high = mid - 1; }
-            }
-            return -1;
 
-        }
-       public static int Recursion_Binary_Searche(int[] array, int key, int high, int low)
-       {
-
-           int mid = (low + high) / 2;
-           if (key == array[mid]) return (mid);
-           if (key > array[mid])  return Recursion_Binary_Searche(array, key, mid + 1, high);
-           else { return Recursion_Binary_Searche(array, key, low, mid - 1);}
-       }
-       
-
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            int []array={-3,5,7,8,10,12};
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i]+"\t");
-            } Console.WriteLine("");
-            Console.WriteLine("Enter the key please");
-            int key=int.Parse(Console.ReadLine());
-            Array.Sort(array);
-          Console.WriteLine( Search<int>.Recursion_Binary_Searche(array, key,0,array.Length-1));
-          //Console.WriteLine(Search<int>.Binary_Searche(array, key));
-
-
+            Console.WriteLine("Wellcome to C# Language\n-----------------------");
+            Linked_List<int> Link1 = new Linked_List<int>();
+            Node n1=new Node(3);
+            Node n2 = new Node(5);
+            Node n3 = new Node(2);
+            Node n4 = new Node(0);
+            Node n5 = new Node(9);
+            //Add
+            Link1.AddFrst(n1);
+            Link1.AddFrst(n2);
+            Link1.Add_at_index(n4, 2);
+            Link1.AddLast(n3);
+            Link1.AddLast(n5);
+            // Delete
+            //Link1.Delete_First();
+           //Link1.Delete_Last();
+            //Link1.Delett_at_by_data(2);
+            Link1.Print();
+ 
         }
     }
 }
