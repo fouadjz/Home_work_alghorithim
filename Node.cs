@@ -4,18 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Home_work_miss_alaa
+namespace Final_Excercise
 {
     class Node
     {
-        public int Data { get; set; }
+        Student student;
+        public Student Student
+        {
+            get { return student; }
+            set { student = value; }
+        }
         Node next;
-        internal Node Next
+        public Node Next
         {
             get { return next; }
             set { next = value; }
         }
         public Node() { }
-        public Node(int data) { Data = data; }
+        public Node(Student student)
+        {
+            this.Student = student;
+        }
     }
 }
